@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能社-http://www.zhinengshe.com</title>
+<style>
+#div1{ width:200px; height:200px; background:red; color:#fff; margin:150px auto;}
+</style>
+<script>
+function setStyle3(obj,name,value){
+	var str=name.charAt(0).toUpperCase()+name.substring(1);
+	obj.style['Webkit'+str]=value;
+	obj.style['Moz'+str]=value;
+	obj.style['O'+str]=value;
+	obj.style['ms'+str]=value;
+	obj.style[name]=value;
+}
+window.onload=function(){
+	var oDiv=document.querySelector('#div1');	
+	
+	oDiv.onclick=function(){
+		setStyle3(oDiv,'transform','rotate(45deg)');
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="div1">div1</div>
+</body>
+</html>

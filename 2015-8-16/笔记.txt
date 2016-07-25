@@ -1,0 +1,312 @@
+git:
+grunt：
+gulp:
+---------------------------------
+html5新标签：
+	header,nav,footer....
+	video,audio,canvas...
+
+移动端：phone ,tv ,pad
+
+html5新标签、新属性、新功能
+css3 新样式
+
+自定义属性：
+	index="1"
+
+	data-xxx
+
+	<input type="button" data-index="">
+	<input type="button" data-index-show="">
+				indexShow
+
+	一组用法：
+		obj.dataset.xxx
+
+js新增一些东西：
+	jquery   获取元素
+
+	选择器：
+	obj.querySelectorAll(选择器)   一组
+
+	obj.querySelector(选择器);   第一个元素
+自定义属性：
+	obj.dataset.xx
+
+
+class: 添加、删除、判断是否有、切换class
+
+	obj.classList
+		.add(sClass)   添加
+		.remove(sClass) 删除
+		.contains(sClass)  是否有
+		.toggle(sClass)  切换class
+
+临时存到某个地方：cookie
+
+cookie:容量小(4K)、使用性、过期、发往服务器、需要放到服务器环境下、兼容所有浏览器
+
+	http 1.1
+	https
+
+	addCookie();
+	removeCookie();
+	getCookie();
+
+本地存储：localStorage
+
+	容量大(5M)、使用性非常方便、没有过期、存在本地、兼容非IE6
+
+	使用：(土)
+		存: localStorage.name=value;
+		取: localStorage.name
+		删除: delete localStorage.a
+		全部删除： for in
+	标准用法：
+		存：localStorage.setItem(name,value);
+		取: localStorage.getItem(name);
+		删除： localStorage.removeItem(name);
+		全部删除: localStorage.clear();
+
+	标准用法：86
+	土：	61
+		
+
+delete 删除对象身上属性
+
+共同点：
+1. 不安全
+2. 不能跨浏览器
+3. 不能跨域
+	
+	新浪微博：
+---------------------------------------
+css3: 样式
+
+div{}
+#div1{}
+
+	input[type=button]
+属性选择器：
+	E:[name]	有这个属性
+	E:[name=value]   有属性，有值
+		E:[name='value']
+	E:[name~=value]  只要有value这个单词
+	E:[name*=value]  只要包含value这个字母就行
+	E:[name^=value]  只要以value这个词开头
+	E:[name$=value]  只要以value这个词结尾
+	E:[name|=value]  只要以value-开头，或者整个value
+
+	E:[name][name=value]  
+
+结构性伪类选择器：
+	:nth-child(n)   第几个元素
+
+		:nth-child(odd)  奇数
+		:nth-child(even)  偶数
+		:nth-child(n)    所有，n从0
+		:nth-child(2n+1)
+
+	:nth-last-child(n)   倒数第几个元素
+
+	:first-child    nth-child(1)  第一个
+	:last-child	nth-last-child(1) 最后一个
+
+	:nth-of-type()  类型的第几个元素
+	:nth-last-of-type() 类型的倒数第几个元素
+
+	E~F	E相邻的下面的F元素
+	E>F	E的子元素
+其他：
+	:empty    空元素
+	:disabled  不可操作的元素
+	:enabled    可操作的元素
+	:checked   选中的元素
+	:not(some)  不包含some
+	:target	   锚点对应的元素
+
+	
+
+文本伪类选择器：
+	:first-line   第一行文本
+	:first-letter  第一个字
+	E::selection{}   选中文本
+		::selection{}  所有
+	::before{}  前面添加
+		content:""
+
+		:before{}
+	::after{}   后面添加
+		:after{}
+-------------------------------------------
+css3新增很多新单位：
+	px  % em
+	deg  rem
+-------------------------------------------
+css3样式，有些样式需要加前缀(浏览器)
+
+浏览器：chrome , ff ,IE ,opera , safari...
+
+-webkit-  chrome opera safari
+-moz-	  FF
+-ms-	  IE
+-o-	  早期opera
+
+* 终极目标，不加前缀
+
+
+width:100px;
+
+旋转：
+transform:rotate(40deg);
+
+
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	transform:rotate(45deg);
+
+	setStyle3(obj,name,value);
+---------------------------------------------
+left:0px;
+left:0;
+background:url('1.png');
+background:url(1.png)
+
+动画： 可以跟js无缝配合
+
+	transition:1s all ease;
+		  时间 哪些属性  运动形式
+
+	时间：
+		s
+		ms
+
+		0.5s  ->  .5s
+		500ms
+	all: 	让哪些属性动
+
+	ease    运动形式
+
+		ease
+		ease-in
+		ease-out
+		ease-in-out
+		linear
+		cubic-bezier(x1,y1,x2,y2)
+			x1,y1,x2,y2 [0-1]  正常值
+			弹性、碰撞、回弹
+---------------------------------
+新增颜色模式：
+	red
+	#fff
+	rgb()
+
+rgba();    alpha [0-1]
+---------------------------------
+圆角：
+	border-radius:10px % em
+
+	测量：
+
+	border-radius:50%;  圆   四个角
+
+	border-radius:10px 30px
+		     左上/右下 右上/左下
+
+	border-radius:10px 30px 50px;
+		     左上  右上/左下 右下
+
+	border-radius:10px 30px 50px 80px;
+	-----------------------------------
+	border-radius:10px/50px;
+		      x/y
+
+	border-radius:10px 30px/40px 50px;
+
+	border-radius:10px 30px/40px;
+
+	border-radius:10px 20px 40px/50px 60px 70px;
+	
+	border-radius:10px 20px 40px 50px/60px 70px;
+	
+	border-radius:10px 20px 40px 50px/60px 70px 80px 90px;		
+	-----------------------------------
+阴影：
+	文字阴影：
+	text-shadow:1px 1px 5px red;
+		    x   y   模糊 颜色
+
+	text-shadow:x y blur color;
+
+	可以叠加：
+	text-shadow:x y blur color,x y blur color...
+
+	浮雕文字：
+	文字模糊：
+	文字光照：
+	夹心：
+	光晕：
+	火焰：
+	描边：
+
+专业文字描边：
+	-webkit-text-stroke:线宽 颜色;
+
+	块(盒子)阴影：
+	box-shadow:1px 1px 5px red;
+	box-shadow:inset x y blur color;
+	box-shadow:[inset] x y blur [扩展(spread)] color;
+
+	外发光：
+	叠加：
+	按钮：
+	
+	
+	
+
+		
+	
+
+
+	
+	
+		
+
+	
+
+
+
+	
+	
+
+
+
+
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能社-http://www.zhinengshe.com</title>
+<style>
+p{ width:300px; height:50px; line-height:50px; text-align:center; font-size:50px; font-weight:bold; font-family:微软雅黑; position:absolute; left:50%; top:50%; margin:-25px 0 0 -150px;}
+#sun{ width:200px; height:200px; background:url(sun.png) no-repeat; background-size:contain; position:absolute; left:0; top:0; cursor:crosshair;}
+</style>
+<script>
+window.onload=function(){
+	var oSun=document.querySelector('#sun');
+	var oP=document.querySelector('#shadow');	
+	
+	document.onmousemove=function(ev){
+		var oEvent=ev || event;
+		oSun.style.left=oEvent.clientX-oSun.offsetWidth/2+'px';
+		oSun.style.top=oEvent.clientY-oSun.offsetHeight/2+'px';
+		
+		var x=oP.offsetWidth/2+oP.offsetLeft-oEvent.clientX;
+		var y=oP.offsetHeight/2+oP.offsetTop-oEvent.clientY;
+		
+		var c=Math.sqrt(x*x+y*y);
+		
+		var scale=1-c/500;
+		oP.style.textShadow=x+'px '+y+'px '+c/5+'px rgba(0,0,0,'+scale+')';
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="sun"></div>
+<p id="shadow">智能社</p>
+</body>
+</html>
