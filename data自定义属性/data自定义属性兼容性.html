@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能社-http://www.zhinengshe.com</title>
+<style>
+
+</style>
+<script>
+function get(obj,name){
+	if(obj.dataset){
+		return obj.dataset[name];
+	}else{
+		return obj.getAttribute('data-'+name);	
+	}
+}
+window.onload=function(){
+	var oBtn=document.getElementById('btn1');	
+	
+	//alert(oBtn.dataset);
+	alert(get(oBtn,'index'));
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="aaa" id="btn1" data-index="1" data-show="2" data-width="300px">
+</body>
+</html>
